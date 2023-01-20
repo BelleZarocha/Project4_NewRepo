@@ -77,8 +77,12 @@ WSGI_APPLICATION = 'corewebsite.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'BelleZarocha/pets_insurance',
+        'USER': 'BelleZarocha',
+        'PASSWORD': 'v2_3yCN7_kzXH4tbXLEr2YeJne69DMAx',
+        'HOST': 'db.bit.io',
+        'PORT': '5432',
     }
 }
 
