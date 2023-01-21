@@ -12,7 +12,7 @@ class Insure_Package(models.Model):
         return self.package_name
 
 class Pet(models.Model):
-    type = models.IntegerField(default='no type')
+    type = models.CharField(default='no type', max_length=100)
     user_id = models.ForeignKey(User, on_delete = models.CASCADE, related_name = 'pets', default = 'no user_id')
     package_id = models.ForeignKey(Insure_Package, on_delete = models.CASCADE, related_name = 'pets', default='no package_id')  
     pet_name = models.CharField(default='no pet_name', max_length=200)
