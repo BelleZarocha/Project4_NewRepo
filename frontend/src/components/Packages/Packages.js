@@ -59,7 +59,15 @@ const Packages = (props) => {
 											component="h2"
 											className={classes.packageTitle}
 										>
-											{pets_insure.title.substr(0, 50)}...
+											{pets_insure.package_name.substr(0, 50)}...
+										</Typography>
+										<Typography
+											gutterBottom
+											variant="h6"
+											component="h2"
+											className={classes.packageTitle}
+										>
+											{pets_insure.price.substr(0, 50)}...
 										</Typography>
 										<div className={classes.packageText}>
 											<Typography
@@ -67,7 +75,7 @@ const Packages = (props) => {
 												color="textPrimary"
 											></Typography>
 											<Typography variant="p" color="textSecondary">
-												{pets_insure.excerpt.substr(0, 60)}...
+												{pets_insure.description.substr(0, 60)}...
 											</Typography>
 										</div>
 									</CardContent>

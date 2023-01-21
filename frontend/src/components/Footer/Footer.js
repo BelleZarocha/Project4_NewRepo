@@ -5,6 +5,9 @@ import Typography from '@material-ui/core/Typography';
 import Grid from '@material-ui/core/Grid';
 import Link from '@material-ui/core/Link';
 import Box from '@material-ui/core/Box';
+import { MdLocationOn, MdEmail } from "react-icons/md";
+import { BsFillTelephoneFill } from "react-icons/bs";
+import { FaFacebookSquare, FaInstagramSquare, FaTwitterSquare } from "react-icons/fa";
 
 const useStyles = makeStyles((theme) => ({
 	footer: {
@@ -22,12 +25,7 @@ const useStyles = makeStyles((theme) => ({
 function Copyright() {
 	return (
 		<Typography variant="body2" color="textSecondary" align="center">
-			{'Copyright © '}
-			<Link color="inherit" href="https://material-ui.com/">
-				Your Website
-			</Link>{' '}
-			{new Date().getFullYear()}
-			{'.'}
+			{'Created by BelleZarocha '}
 		</Typography>
 	);
 }
