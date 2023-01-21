@@ -1,6 +1,6 @@
 from django.db import models
-from django.contrib.auth.models import User
 from django.utils import timezone
+from django.conf import settings
 
 # Create your models here.
 class Insure_Package(models.Model):
@@ -13,7 +13,7 @@ class Insure_Package(models.Model):
 
 class Pet(models.Model):
     type = models.CharField(default='no type', max_length=100)
-    user_id = models.ForeignKey(User, on_delete = models.CASCADE, related_name = 'pets', default = 'no user_id')
+    user_id = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete = models.CASCADE, related_name = 'pets', default = 'no user_id')
     package_id = models.ForeignKey(Insure_Package, on_delete = models.CASCADE, related_name = 'pets', default='no package_id')  
     pet_name = models.CharField(default='no pet_name', max_length=200)
     species = models.CharField(default='no species', max_length=200)
