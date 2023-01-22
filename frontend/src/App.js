@@ -1,29 +1,29 @@
 import React, { useEffect, useState } from 'react';
 import './App.css';
-import Packages from './components/Packages/Packages';
-import PageLoadingComponent from './components/PageLoading/PageLoading';
-
+import { Route, Routes, useParams } from "react-router-dom";
+import Nav from './components/Navbar/Nav';
+import Footer from './components/Footer/Footer';
+import Home from './components/Home/Home';
+import Register from './components/Register/Register'
+import Login from './components/Login/Login'
+import Logout from './components/Logout/Logout'
 function App() {
-	const PageLoading = PageLoadingComponent(Packages);
-	const [appState, setAppState] = useState({
-		loading: false,
-		posts: null,
-	});
+	
 
-	useEffect(() => {
-		setAppState({ loading: true });
-		const apiUrl = `http://localhost:8000/api/packages/`;
-		fetch(apiUrl)
-			.then((data) => data.json())
-			.then((posts) => {
-				setAppState({ loading: false, posts: posts });
-			});
-	}, [setAppState]);
 	return (
-		<div className="App">
-			<h1>Pets Insurance Packages</h1>
-			<PageLoading isLoading={appState.loading} packages={appState.posts} />
+		<div>
+			<Nav />
+
+			<Routes>
+				<Route path="/" element={<Home />}/>
+				<Route path="/register" element={<Register />} />
+				<Route path="/login" element={<Login />} />
+				<Route path="/logout" element={<Logout />} />
+      		</Routes>
+
+			<Footer />
 		</div>
+		
 	);
 }
 export default App; 

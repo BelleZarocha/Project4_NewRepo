@@ -1,0 +1,15 @@
+.petTop {
+    width: 100%;
+    margin-top: 50px;
+}
+
+.typeText {
+    font-size: 3vmax;
+    color: #2a9d8f;
+    margin: 40px;
+}
+
+.photo1 {
+    position: absolute;
+    width: 30vmax;
+}
