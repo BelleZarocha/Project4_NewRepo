@@ -25,6 +25,7 @@
 > - pip install django
 > - pip install djangorestframework
 > - python manage.py runserver
+
 > React
 > - npm i
 > - npm start
