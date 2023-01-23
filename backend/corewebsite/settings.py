@@ -26,7 +26,7 @@ SECRET_KEY = 'django-insecure-bdij21e#&sa12v!(anx0p0i#wudsdm785ooowd5la2v980i8xk
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -42,7 +42,8 @@ INSTALLED_APPS = [
     'api',
     'rest_framework',
     'corsheaders',
-    'accounts'
+    'accounts',
+    'rest_framework_simplejwt.token_blacklist',
 ]
 
 REST_FRAMEWORK = {
@@ -92,9 +93,9 @@ WSGI_APPLICATION = 'corewebsite.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'BelleZarocha/pets_insure_db',
+        'NAME': 'BelleZarocha/Pets_Insure_db',
         'USER': 'BelleZarocha',
-        'PASSWORD': 'v2_3yE6v_nWPPnmFPvn4XaqjxBJvvpED',
+        'PASSWORD': 'v2_3yFBV_pNRFh2J5dUJBjDaFFXNw8TN',
         'HOST': 'db.bit.io',
         'PORT': '5432',
     }
@@ -142,9 +143,12 @@ STATIC_URL = 'static/'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-CORS_ALLOWED_ORIGINS = [
-    "http://localhost:3000",
-]
+# CORS_ALLOWED_ORIGINS = [
+#     # "http://localhost:3000",
+# ]
+
+CORS_ALLOW_ALL_ORIGINS =True
+CORS_ALLOW_CREDENTIALS = True
 
 # User Model
 AUTH_USER_MODEL = "accounts.NewUser"

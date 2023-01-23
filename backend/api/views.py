@@ -1,5 +1,6 @@
 from rest_framework import generics
 from pets_insure.models import Insure_Package, Pet
+from accounts.models import NewUser
 from .serializers import PackageSerializer, PetSerializer
 from rest_framework.permissions import IsAdminUser, DjangoModelPermissionsOrAnonReadOnly
 
@@ -22,4 +23,12 @@ class PetList(generics.ListCreateAPIView):
     pass 
 
 class PetDetail(generics.RetrieveDestroyAPIView):
+    pass
+
+class UserList(generics.ListCreateAPIView):
+    queryset = NewUser.objects.all()
+    serializer_class = PetSerializer
+    pass 
+
+class UserDetail(generics.RetrieveDestroyAPIView):
     pass
